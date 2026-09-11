@@ -5,7 +5,7 @@ import {
   FaFileAlt, FaSignOutAlt,
   FaBell, FaSearch, FaBars, FaTimes,
   FaChevronLeft, FaChevronRight, FaUserPlus, FaList,
-  FaFileInvoice
+  FaFileInvoice, FaDatabase
 } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import Overview from './dashboard/Overview';
@@ -16,6 +16,7 @@ import AddMembers from './dashboard/AddMembers';
 import Transactions from './dashboard/Transactions';
 import ReportPreview from './dashboard/ReportPreview';
 import Reports from './dashboard/Reports';
+import Storage from './dashboard/Storage';
 
 const Dashboard = ({ setIsAuthenticated }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -64,6 +65,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
     { icon: FaWallet, label: 'Income', path: '/income' },
     { icon: FaCreditCard, label: 'Expenses', path: '/expenses' },
     { icon: FaFileInvoice, label: 'Reports', path: '/reports' },
+    { icon: FaDatabase, label: 'Storage', path: '/storage' },
   ];
 
   // Sidebar content
@@ -217,6 +219,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
             <Route path="/expenses" element={<Expenses />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/report-preview" element={<ReportPreview />} />
+            <Route path="/storage" element={<Storage />} />
             <Route path="*" element={<Overview />} />
           </Routes>
         </main>
