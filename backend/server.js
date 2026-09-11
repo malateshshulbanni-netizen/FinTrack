@@ -18,6 +18,20 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Health check route - ADD THIS
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'FinTrack API is running',
+    endpoints: {
+      members: '/api/members',
+      transactions: '/api/transactions',
+      adminLogin: '/api/admin/login'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Routes
 app.use('/api/members', memberRoutes);
 app.use('/api/transactions', transactionRoutes);
