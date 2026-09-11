@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 
+// Use environment variable for API URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Login = ({ setIsAuthenticated }) => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +24,7 @@ const Login = ({ setIsAuthenticated }) => {
     setLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/login', {
+      const response = await axios.post(`${API_URL}/api/admin/login`, {
         password
       });
 
