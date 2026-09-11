@@ -20,7 +20,7 @@ app.use(cors({
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:5173',
-    'https://fin-track-admin.vercel.app',
+    'https://fin-track-admin.vercel.app/login',
     'https://fin-track-client-khaki.vercel.app'
   ],
   credentials: true,
